@@ -16,7 +16,7 @@ const { USER_STATUS } = require('../consts/UserConstants');
 exports.test = catchAsync(async (req, res, next) => {
     res.status(200).json({
         status: 'success',
-        data: 'Test API'
+        data: 'Test API1'
     });
 });
 
