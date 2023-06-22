@@ -13,6 +13,13 @@ const authService = require('./../service/auth.service');
 const { TOKEN_TYPE } = require('../consts/AuthConstants');
 const { USER_STATUS } = require('../consts/UserConstants');
 
+exports.test = catchAsync(async (req, res, next) => {
+    res.status(200).json({
+        status: 'success',
+        data: 'Test API'
+    });
+});
+
 exports.findByUserIdentifier = catchAsync(async (req, res, next) => {
     const { userIdentifier } = req.params;
 
@@ -89,7 +96,7 @@ exports.veifyEmail = catchAsync(async (req, res, next) => {
     if (!user) {
         return next(new AppError('Token is invalid or has expired', 400));
     }
-    // 3) Update changedPasswordAt property for the user
+    // 3) Update changedPasswordAt
     user.status = USER_STATUS.ACTIVE;
     user.accountActivateAt = Date.now();
     user.accountActivationToken = undefined;

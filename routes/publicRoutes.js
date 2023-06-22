@@ -3,6 +3,8 @@ const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
+router.get('/', authController.test);
+
 router.get('/find/:userIdentifier', authController.findByUserIdentifier);
 router.get('/authenticate/:userId', authController.authenticate);
 router.post('/signup', authController.signup);
