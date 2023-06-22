@@ -1,0 +1,7 @@
+exports.TOKEN_TYPE = {
+    SIGN_UP: 0,
+    VERIFICATION: 1,
+    LOGIN: 2,
+    FORGOT_PASSWORD: 3,
+    RESET_PASSWORD: 4,
+}
